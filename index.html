@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Monstar Attack</title>
+
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat|Roboto" rel="stylesheet">
+	<!-- fontawesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+	<!-- Bootsrap4 -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+
+
+	
+	<!-- CSS -->
+	<link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+	<div class="container" id="app">
+		<div class="row">
+			<div class="in-blk">
+				<h1>Player Health</h1>
+				<div class="health text-center pt-4 text-white" v-bind:style="{width: playerHealth + '%'}">
+					<h4>{{ playerHealth }}</h4>
+				</div>
+			</div>
+			<div class="in-blk">
+				<h1>Monster Health</h1>
+				<div class="health text-center pt-4 text-white" v-bind:style="{width: monsterHealth + '%'}">
+					<h4>{{ monsterHealth }}</h4>
+				</div>
+			</div>
+		</div>
+
+		<div class="row" v-if="!isRunning">
+			<button class="btn btn-lg mx-auto" v-on:click='start'>Start Game</button>
+		</div>
+		<div class="row" v-else>
+			<button class="btn btn-lg btn-primary mx-auto" v-on:click='attack(10, 3)'>Attack</button>
+			<button class="btn btn-lg btn-danger mx-auto" v-on:click='attack(13, 5)'>Special Attack</button>
+			<button class="btn btn-lg btn-warning mx-auto" v-on:click='heal'>Heal</button>
+			<button class="btn btn-lg btn-success mx-auto" v-on:click="start">Give up</button>
+		</div>
+	</div>
+
+	
+
+
+
+
+
+<!-- Bootstrap 4 JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<!-- End Bootstrap 4 JS -->
+
+	<!-- Vue -->
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+	<!-- Vue Router -->
+	<script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+
+<script src="js/main.js"></script>
+</body>
+
+
+</html>
